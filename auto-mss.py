@@ -1,21 +1,34 @@
+import os
+import sys
 import subprocess
 import psutil
 import pyautogui
 import time
 
+
+if getattr(sys, 'frozen', False):
+    # Running in executable mode
+    base_path = sys._MEIPASS
+else:
+    # Running in normal Python mode
+    base_path = os.path.abspath(".")
+
+
 game_path = "C:/Program Files (x86)/Aiming Inc/danchroen/danchro.exe"
-img_dir = 'img/'
-result_path = img_dir + 'template_result.png'
-matching_path = img_dir + 'template_matching.png'
-tap_screen_path = img_dir + 'tap_screen.png'
-begin_matchmaking_path = img_dir + 'begin_matchmaking.png'
-clock_path = img_dir + 'playing_clock.png'
-ping_path = img_dir + 'ping.png'
-rank_up_rewards_path = img_dir + 'rank_up_rewards.png'
-rank_up_close_path = img_dir + 'rank_up_close.png'
-arena_path = img_dir + 'arena_main_menu.png'
-start_game_path = img_dir + 'start_game.png'
-mss_path = img_dir + 'mss.png'
+
+img_dir = os.path.join(base_path, "img")
+
+result_path = os.path.join(img_dir, 'template_result.png')
+matching_path = os.path.join(img_dir, 'template_matching.png')
+tap_screen_path = os.path.join(img_dir, 'tap_screen.png')
+begin_matchmaking_path = os.path.join(img_dir, 'begin_matchmaking.png')
+clock_path = os.path.join(img_dir, 'playing_clock.png')
+ping_path = os.path.join(img_dir, 'ping.png')
+rank_up_rewards_path = os.path.join(img_dir, 'rank_up_rewards.png')
+rank_up_close_path = os.path.join(img_dir, 'rank_up_close.png')
+arena_path = os.path.join(img_dir, 'arena_main_menu.png')
+start_game_path = os.path.join(img_dir, 'start_game.png')
+mss_path = os.path.join(img_dir, 'mss.png')
 
 total_matches = 0
 start = time.time()

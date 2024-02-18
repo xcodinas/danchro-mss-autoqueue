@@ -3,6 +3,16 @@
 This is an script to auto queue for matches in the game "Danchro"
 in the "Magic Stone Scramble" mode.
 
+## Video Example
+
+
+
+
+https://github.com/xcodinas/danchro-mss-autoqueue/assets/20686011/64fc22c4-2fe4-4d05-aa5b-0db5d3bce538
+
+
+
+
 ## Features
 
 - **Automatic Game Startup**: The script automatically starts the game if it's not already running.

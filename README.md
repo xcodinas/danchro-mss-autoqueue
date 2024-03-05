@@ -55,7 +55,15 @@ The game should be in the main monitor and in the foreground for the script to w
 
 To create an executable file from the script, you can use a tool such as `pyinstaller`:
 
+You first need to create the version file with the following command:
+```bash
+pip install pyinstaller-versionfile
+create-version-file metadata.yml --outfile file_version_info.txt
+```
+
+
 ```bash
 pip install pyinstaller
-pyinstaller --console --onefile --add-data "img/*;img/" auto-mss.py
+pyinstaller --console --onefile --add-data "img/*;img/" auto-mss.py --icon=img/icon.ico --version-file=file_version_info.txt
+ --windowed
 ```

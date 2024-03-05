@@ -29,6 +29,8 @@ rank_up_close_path = os.path.join(img_dir, 'rank_up_close.png')
 arena_path = os.path.join(img_dir, 'arena_main_menu.png')
 start_game_path = os.path.join(img_dir, 'start_game.png')
 mss_path = os.path.join(img_dir, 'mss.png')
+date_change_button_path = os.path.join(img_dir, 'date_change_button.png')
+date_change_text_path = os.path.join(img_dir, 'date_change_text.png')
 
 total_matches = 0
 start = time.time()
@@ -72,6 +74,10 @@ def is_waiting():
 
 def is_ranked_up():
     return get_image_location(rank_up_rewards_path)
+
+
+def is_date_change():
+    return get_image_location(date_change_text_path)
 
 
 def start_game():
@@ -169,6 +175,13 @@ if __name__ == '__main__':
                 pyautogui.click(tap_screen.left, tap_screen.top)
                 time.sleep(10)
                 print('Back to MSS menu!')
+                continue
+            elif is_date_change():
+                print('Date change detected. Clicking on date change button...')
+                date_change_button = pyautogui.locateOnScreen(date_change_button_path, confidence=0.6)
+                pyautogui.click(date_change_button.left, date_change_button.top)
+                time.sleep(5)
+                print('Date change button clicked.')
                 continue
             else:
                 print('Nothing found, probably between menus')
